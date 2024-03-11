@@ -21,7 +21,7 @@ module.exports = {
 		amd: true,
 		node: true,
 		// Testing
-		// 'jest/globals': true,
+		'jest/globals': true,
 		// 'cypress/globals': true,
 		// mocha: true,
 	},
