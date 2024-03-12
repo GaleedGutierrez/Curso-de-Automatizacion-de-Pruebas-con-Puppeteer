@@ -24,6 +24,7 @@ describe('Extracting information', () => {
 		},
 		TIMEOUT_JEST,
 	);
+
 	it(
 		'Should extract information from element',
 		async () => {
@@ -46,6 +47,7 @@ describe('Extracting information', () => {
 		},
 		TIMEOUT_JEST,
 	);
+
 	it(
 		'Should count element from a page',
 		async () => {

@@ -4,6 +4,7 @@ import pupperteer from 'puppeteer';
 const TIMEOUT_JEST = 60000;
 
 jest.setTimeout(TIMEOUT_JEST);
+
 describe('Timeouts', () => {
 	it('Timeouts', async () => {
 		const BROWSER = await pupperteer.launch({

@@ -1,15 +1,17 @@
 {
 	"compilerOptions": {
-		"module": "ESNext",
-		"target": "ES2022",
+		// "module": "ESNext",
+		"module": "NodeNext",
+		"target": "ESNext",
 		"useDefineForClassFields": true,
-		"lib": ["ES2020", "DOM", "DOM.Iterable", "WebWorker", "ESNext"],
+		"lib": ["ES2023", "DOM", "DOM.Iterable", "WebWorker", "ESNext"],
 		"skipLibCheck": true,
 
 		/* Bundler mode */
-		"moduleResolution": "bundler",
+		// This is from Vite. Frontend?
+		// "moduleResolution": "Bundler",
+		// "resolveJsonModule": true,
 		"allowImportingTsExtensions": true,
-		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"noEmit": true,
 		"removeComments": true,
@@ -27,6 +29,7 @@
 		"allowSyntheticDefaultImports": true,
 		"baseUrl": "./",
 		"paths": {
+			"@/*": ["/*"],
 			"@src/*": ["src/*"],
 			"@styles/*": ["public/*"],
 			"@utils/*": ["src/utils/*"],
@@ -47,7 +50,8 @@
 			"module": "ES2022"
 		}
 	},
+
 	"extends": "@tsconfig/recommended/tsconfig.json",
-	"include": ["./**/*.ts"],
+	"include": ["./**/*.ts", "jest.config.js"],
 	"exclude": ["node_modules"]
 }
