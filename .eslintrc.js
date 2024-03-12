@@ -20,6 +20,7 @@ module.exports = {
 		browser: true,
 		amd: true,
 		node: true,
+
 		// Testing
 		'jest/globals': true,
 		// 'cypress/globals': true,
@@ -47,6 +48,7 @@ module.exports = {
 			},
 			rules: {
 				'tsdoc/syntax': 'warn',
+				'@typescript-eslint/explicit-function-return-type': 'error',
 				'@typescript-eslint/no-explicit-any': 'error',
 				'@typescript-eslint/no-non-null-assertion': 'error',
 				'@typescript-eslint/consistent-type-definitions': 'error',
@@ -223,7 +225,7 @@ module.exports = {
 		{
 			files: TS_FILES_REACT,
 			rules: {
-				'@typescript-eslint/explicit-module-boundary-types': ['error'],
+				'@typescript-eslint/explicit-module-boundary-types': 'error',
 			},
 		},
 
@@ -241,9 +243,15 @@ module.exports = {
 				'plugin:jest/recommended',
 				'plugin:jest/style',
 				'plugin:jest-dom/recommended',
+				'plugin:jest-formatting/recommended',
+
 				// 'plugin:testing-library/dom',
 			],
-			plugins: ['jest', 'jest-dom' /*, 'testing-library'*/],
+			plugins: [
+				'jest',
+				'jest-dom',
+				'jest-formatting' /*, 'testing-library'*/,
+			],
 			rules: {
 				'@typescript-eslint/unbound-method': 'off',
 				'jest/unbound-method': 'error',
@@ -402,6 +410,8 @@ module.exports = {
 			{
 				'./src/**/': 'KEBAB_CASE',
 				'./cypress/**/': 'KEBAB_CASE',
+				'./test/**/': 'KEBAB_CASE',
+				'./tests/**/': 'KEBAB_CASE',
 			},
 		],
 
