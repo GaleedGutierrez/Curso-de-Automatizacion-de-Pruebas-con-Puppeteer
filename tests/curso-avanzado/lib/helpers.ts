@@ -1,6 +1,6 @@
 import { ClickOptions, KeyboardTypeOptions, Page } from 'puppeteer';
 
-function couldNotFindSelectorErrorMessage(selector: string): never {
+export function couldNotFindSelectorErrorMessage(selector: string): never {
 	throw new Error(`Could not find selector: ${selector}`);
 }
 
