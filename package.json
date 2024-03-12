@@ -6,7 +6,7 @@
 	"scripts": {
 		"lint": "npx eslint ./**/*.{js,mjs,cjs,ts,mts,cts}",
 		"lint:fix": "npx eslint --fix ./**/*.{js,mjs,cjs,ts,mts,cts}",
-		"test": "jest",
+		"test": "jest --forceExit --detectOpenHandles",
 		"test:device": "jest --forceExit --detectOpenHandles tests/curso-avanzado/001EmulateDevices.test.ts",
 		"prepare": "husky"
 	},

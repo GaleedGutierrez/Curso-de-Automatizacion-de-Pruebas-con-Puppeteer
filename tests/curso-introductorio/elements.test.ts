@@ -44,7 +44,7 @@ describe('Interacting with elements', () => {
 			PAGE.on('dialog', async (dialog) => {
 				await dialog.accept();
 			});
-			// Right Click
+			// Double Click
 			await PAGE.click('button[ondblclick="myFunction()"]', {
 				count: 2,
 			});

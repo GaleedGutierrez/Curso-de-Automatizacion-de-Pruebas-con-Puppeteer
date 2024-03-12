@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import pupperteer, { Browser, Device, KnownDevices, Page } from 'puppeteer';
 
-import { waitForATime } from './utilities/waitForATime.ts';
+import { waitForATime } from './lib/helpers.ts';
 
 const TIMEOUT_JEST = 60000;
 const BASE_URL = new URL('https://platzi.com');

@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import pupperteer, {
 	Browser,
 	BrowserContext,
@@ -6,7 +5,7 @@ import pupperteer, {
 	Page,
 } from 'puppeteer';
 
-import { waitForATime } from './utilities/waitForATime';
+import { waitForATime } from './lib/helpers.ts';
 
 const TIMEOUT_JEST = 60000;
 const TIME_WAIT = 5000;
@@ -25,10 +24,14 @@ describe('Incognito mode', () => {
 			headless: false,
 			defaultViewport: null,
 		});
+
 		browserContext = await browser.createBrowserContext();
-		// Obsolete
+
+		/**  Obsolete */
 		browserContext.isIncognito();
+
 		page = await browserContext.newPage();
+
 		await page.goto(BASE_URL.href);
 	});
 
@@ -39,5 +42,9 @@ describe('Incognito mode', () => {
 	test('Should open incognito mode', async () => {
 		await page.emulate(IPHONE_6);
 		await waitForATime(TIME_WAIT);
+
+		((): {
+			x: number;
+		} => ({ x: 1 + 2 }))();
 	});
 });
