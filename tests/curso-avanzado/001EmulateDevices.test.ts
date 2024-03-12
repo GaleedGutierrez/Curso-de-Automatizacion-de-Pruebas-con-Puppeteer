@@ -1,13 +1,11 @@
 /* eslint-disable no-console */
 import pupperteer, { Browser, Device, KnownDevices, Page } from 'puppeteer';
 
-const waitAtime = async (time: number): Promise<unknown> =>
-	new Promise((resolve) => {
-		setTimeout(resolve, time);
-	});
+import { waitForATime } from './utilities/waitForATime.ts';
 
 const TIMEOUT_JEST = 60000;
 const BASE_URL = new URL('https://platzi.com');
+const TIME_WAIT = 5000;
 // New way
 const IPHONE_6 = KnownDevices['iPhone 6'];
 const TABLET = KnownDevices['iPad Pro'];
@@ -47,19 +45,19 @@ describe('Emulate devices', () => {
 
 	test('Should emulate device manually', async () => {
 		await page.emulate(MY_DEVICE);
-		await waitAtime(5000);
+		await waitForATime(TIME_WAIT);
 	});
 
 	test('Should emulate phone', async () => {
 		await page.emulate(IPHONE_6);
-		await waitAtime(5000);
+		await waitForATime(TIME_WAIT);
 	});
 
 	test('Should emulate tablet', async () => {
 		await page.emulate(TABLET);
-		await waitAtime(5000);
+		await waitForATime(TIME_WAIT);
 		await page.emulate(TABLET_LANDSCAPE);
-		await waitAtime(5000);
+		await waitForATime(TIME_WAIT);
 	});
 
 	test('Should emulate desktop', async () => {
@@ -67,6 +65,6 @@ describe('Emulate devices', () => {
 			width: 1920,
 			height: 1080,
 		});
-		await waitAtime(5000);
+		await waitForATime(TIME_WAIT);
 	});
 });
