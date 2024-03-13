@@ -8,6 +8,7 @@
 		"lint:fix": "npx eslint --fix ./**/*.{js,mjs,cjs,ts,mts,cts}",
 		"test": "jest --forceExit --detectOpenHandles",
 		"test:device": "jest --forceExit --detectOpenHandles tests/curso-avanzado/001EmulateDevices.test.ts",
+		"test:update-snapshots": "jest --updateSnapshot --forceExit --detectOpenHandles  tests/curso-avanzado/005visual.test.ts",
 		"prepare": "husky"
 	},
 	"repository": {
@@ -29,6 +30,7 @@
 		"@stylistic/eslint-plugin": "^1.6.3",
 		"@tsconfig/recommended": "^1.0.3",
 		"@types/jest": "^29.5.12",
+		"@types/jest-image-snapshot": "^6.4.0",
 		"@types/node": "^20.11.25",
 		"@typescript-eslint/eslint-plugin": "^7.1.1",
 		"@typescript-eslint/parser": "^7.1.1",
@@ -49,6 +51,7 @@
 		"eslint-plugin-unused-imports": "^3.1.0",
 		"husky": "^9.0.11",
 		"jest": "^29.7.0",
+		"jest-image-snapshot": "^6.4.0",
 		"prettier": "^3.2.5",
 		"puppeteer": "^22.4.1",
 		"ts-jest": "^29.1.2",
