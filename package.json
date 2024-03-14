@@ -27,6 +27,7 @@
 	},
 	"homepage": "https://github.com/GaleedGutierrez/Curso-de-Automatizacion-de-Pruebas-con-Puppeteer#readme",
 	"devDependencies": {
+		"@axe-core/puppeteer": "^4.8.5",
 		"@stylistic/eslint-plugin": "^1.6.3",
 		"@tsconfig/recommended": "^1.0.3",
 		"@types/jest": "^29.5.12",
