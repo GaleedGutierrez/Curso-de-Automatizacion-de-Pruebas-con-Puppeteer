@@ -10,7 +10,7 @@ max_line_length = 80
 spaces_around_operators = true
 indent_brace_style = K&R
 curly_bracket_next_line = false
-end_of_line = crlf
+end_of_line = lf
 
 [*.{ts,js}]
 quote_type = single
