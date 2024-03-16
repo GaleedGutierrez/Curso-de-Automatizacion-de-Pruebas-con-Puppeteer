@@ -50,8 +50,9 @@
 			"module": "ES2022"
 		}
 	},
+	"types": ["puppeteer", "jest-environment-puppeteer", "expect-puppeteer"],
 
 	"extends": "@tsconfig/recommended/tsconfig.json",
-	"include": ["./**/*.ts", "jest.config.js"],
+	"include": ["./**/*.ts", "jest.config.js", "jest-puppeteer.config.js"],
 	"exclude": ["node_modules"]
 }
