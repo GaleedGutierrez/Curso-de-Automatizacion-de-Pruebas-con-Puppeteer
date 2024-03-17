@@ -1,6 +1,6 @@
 /** @type {import('jest-environment-puppeteer').JestPuppeteerConfig}  */
 const config = {
-	launch: { headless: false, slowMo: 100 },
+	launch: { headless: true, slowMo: 100, defaultViewport: null },
 	BrowserContext: 'default',
 };
 

@@ -1,21 +1,21 @@
 import { ClickOptions, KeyboardTypeOptions } from 'puppeteer';
 
 export class BasePage {
-	static async waitForATime(time: number): Promise<void> {
+	getUrl(): string {
+		return page.url();
+	}
+
+	async waitForATime(time: number): Promise<void> {
 		await new Promise((resolve) => {
 			setTimeout(resolve, time);
 		});
 	}
 
-	static getUrl(): string {
-		return page.url();
-	}
-
-	static async getTitle(): Promise<string> {
+	async getTitle(): Promise<string> {
 		return await page.title();
 	}
 
-	static async getText(selector: string): Promise<string> {
+	async getText(selector: string): Promise<string> {
 		try {
 			await page.waitForSelector(selector);
 
@@ -36,10 +36,7 @@ export class BasePage {
 		}
 	}
 
-	static async getAttribute(
-		selector: string,
-		attribute: string,
-	): Promise<string> {
+	async getAttribute(selector: string, attribute: string): Promise<string> {
 		try {
 			await page.waitForSelector(selector);
 
@@ -61,7 +58,7 @@ export class BasePage {
 		}
 	}
 
-	static async getValue(selector: string): Promise<string | number> {
+	async getValue(selector: string): Promise<string | number> {
 		try {
 			await page.waitForSelector(selector);
 
@@ -92,22 +89,22 @@ export class BasePage {
 		}
 	}
 
-	static async getCount(selector: string): Promise<number> {
+	async getCount(selector: string): Promise<number> {
 		try {
 			await page.waitForSelector(selector);
 
-			const TEXT = await page.$$eval(
+			const COUNT = await page.$$eval(
 				selector,
 				(element) => element.length,
 			);
 
-			if (!TEXT) {
+			if (!COUNT) {
 				throw new Error(
 					`Could not find attribute in selector: ${selector}`,
 				);
 			}
 
-			return TEXT;
+			return COUNT;
 		} catch (error) {
 			throw new Error(
 				`Could not find elements with selector: ${selector}`,
@@ -115,10 +112,7 @@ export class BasePage {
 		}
 	}
 
-	static async click(
-		selector: string,
-		options?: ClickOptions,
-	): Promise<void> {
+	async click(selector: string, options?: ClickOptions): Promise<void> {
 		try {
 			await page.waitForSelector(selector);
 			await page.click(selector, options);
@@ -127,10 +121,7 @@ export class BasePage {
 		}
 	}
 
-	static async doubleClick(
-		selector: string,
-		options?: ClickOptions,
-	): Promise<void> {
+	async doubleClick(selector: string, options?: ClickOptions): Promise<void> {
 		try {
 			await page.waitForSelector(selector);
 			await page.click(selector, { ...options, count: 2 });
@@ -139,7 +130,7 @@ export class BasePage {
 		}
 	}
 
-	static async type(
+	async type(
 		selector: string,
 		text: string,
 		options?: KeyboardTypeOptions,
@@ -152,7 +143,7 @@ export class BasePage {
 		}
 	}
 
-	static async select(selector: string, ...values: string[]): Promise<void> {
+	async select(selector: string, ...values: string[]): Promise<void> {
 		try {
 			await page.waitForSelector(selector);
 			await page.select(selector, ...values);
