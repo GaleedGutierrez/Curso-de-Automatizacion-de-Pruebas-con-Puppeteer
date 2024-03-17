@@ -29,7 +29,7 @@
 		"allowSyntheticDefaultImports": true,
 		"baseUrl": "./",
 		"paths": {
-			"@/*": ["/*"],
+			"@/*": ["./*"],
 			"@src/*": ["src/*"],
 			"@styles/*": ["public/*"],
 			"@utils/*": ["src/utils/*"],

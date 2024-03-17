@@ -216,11 +216,11 @@ module.exports = {
 					},
 				],
 			},
-			// settings: {
-			// 	'import/resolver': {
-			// 		typescript: {},
-			// 	},
-			// }
+			settings: {
+				'import/resolver': {
+					typescript: {},
+				},
+			},
 		},
 		{
 			files: TS_FILES_REACT,
@@ -233,7 +233,24 @@ module.exports = {
 		{
 			files: JS_FILES_REACT,
 			extends: ['plugin:jsdoc/recommended'],
-			plugins: ['jsdoc'],
+			plugins: ['jsdoc', 'sort-class-members'],
+			rules: {
+				'sort-class-members/sort-class-members': [
+					'error',
+					{
+						order: [
+							'[properties]',
+							'[conventional-private-properties]',
+							'[static-properties]',
+							'constructor',
+							'[methods]',
+							'[conventional-private-methods]',
+							'[static-methods]',
+						],
+						accessorPairPositioning: 'getThenSet',
+					},
+				],
+			},
 		},
 
 		// Testing: Jest - Testing Library
@@ -299,7 +316,6 @@ module.exports = {
 		'unused-imports',
 		'check-file',
 		'editorconfig',
-		'sort-class-members',
 		'@stylistic',
 	],
 	rules: {
@@ -357,8 +373,15 @@ module.exports = {
 		curly: 'error',
 		'@stylistic/lines-between-class-members': [
 			'error',
-			'always',
-			{ exceptAfterSingleLine: true },
+			{
+				enforce: [
+					{ blankLine: 'always', prev: 'field', next: '*' },
+					{ blankLine: 'always', prev: '*', next: 'field' },
+					{ blankLine: 'never', prev: 'field', next: 'field' },
+					{ blankLine: 'always', prev: '*', next: 'method' },
+					{ blankLine: 'always', prev: 'method', next: '*' },
+				],
+			},
 		],
 		'@stylistic/padding-line-between-statements': [
 			'error',
@@ -406,21 +429,6 @@ module.exports = {
 			{ blankLine: 'always', prev: ['case', 'default'], next: '*' },
 			{ blankLine: 'always', prev: 'if', next: '*' },
 			{ blankLine: 'always', prev: '*', next: 'return' },
-		],
-		'sort-class-members/sort-class-members': [
-			'error',
-			{
-				order: [
-					'[properties]',
-					'[conventional-private-properties]',
-					'[static-properties]',
-					'constructor',
-					'[methods]',
-					'[conventional-private-methods]',
-					'[static-methods]',
-				],
-				accessorPairPositioning: 'getThenSet',
-			},
 		],
 
 		//? CodelyTV

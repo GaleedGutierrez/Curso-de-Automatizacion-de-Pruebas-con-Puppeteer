@@ -18,6 +18,7 @@ const config: Config = {
 		},
 	},
 	bail: 5,
+	moduleNameMapper: { '^@/(.*)$': '<rootDir>/$1' },
 	// clearMocks: true,
 	// collectCoverage: true,
 	// coverageDirectory: 'coverage',
