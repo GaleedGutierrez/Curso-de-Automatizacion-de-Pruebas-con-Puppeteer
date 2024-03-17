@@ -53,6 +53,12 @@
 	"types": ["puppeteer", "jest-environment-puppeteer", "expect-puppeteer"],
 
 	"extends": "@tsconfig/recommended/tsconfig.json",
-	"include": ["./**/*.ts", "jest.config.js", "jest-puppeteer.config.js"],
+	"include": [
+		"./**/*.ts",
+		"jest.config.js",
+		"jest-puppeteer.config.js",
+		"commitlint.config.ts",
+		".commitlint.ts"
+	],
 	"exclude": ["node_modules"]
 }

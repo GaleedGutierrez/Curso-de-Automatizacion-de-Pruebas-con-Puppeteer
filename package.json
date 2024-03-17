@@ -6,10 +6,11 @@
 	"scripts": {
 		"lint": "npx eslint ./**/*.{js,mjs,cjs,ts,mts,cts}",
 		"lint:fix": "npx eslint --fix ./**/*.{js,mjs,cjs,ts,mts,cts}",
-		"test": "jest --forceExit --detectOpenHandles",
+		"test": "jest --runInBand --forceExit --detectOpenHandles",
 		"test:device": "jest --forceExit --detectOpenHandles tests/curso-avanzado/001EmulateDevices.test.ts",
 		"test:update-snapshots": "jest --updateSnapshot --forceExit --detectOpenHandles  tests/curso-avanzado/005visual.test.ts",
 		"test:node": "node --trace-warnings node_modules/.bin/jest",
+		"test:12": "jest --runInBand --forceExit --detectOpenHandles tests/curso-avanzado/012OurFramework.test.ts",
 		"prepare": "husky"
 	},
 	"repository": {
@@ -32,6 +33,8 @@
 		"@babel/core": "^7.24.0",
 		"@babel/preset-env": "^7.24.0",
 		"@babel/preset-typescript": "^7.23.3",
+		"@commitlint/cli": "^19.2.0",
+		"@commitlint/config-conventional": "^19.1.0",
 		"@stylistic/eslint-plugin": "^1.6.3",
 		"@tsconfig/recommended": "^1.0.3",
 		"@types/expect-puppeteer": "^5.0.6",
