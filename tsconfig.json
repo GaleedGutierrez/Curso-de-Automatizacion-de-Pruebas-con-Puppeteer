@@ -57,7 +57,7 @@
 		"./**/*.ts",
 		"jest.config.js",
 		"jest-puppeteer.config.js",
-		"commitlint.config.ts",
+		"commitlint.config.cjs",
 		".commitlint.ts"
 	],
 	"exclude": ["node_modules"]
