@@ -41,6 +41,7 @@ export interface Metadata {
 	'user-agent': string;
 	'v8-version': string;
 }
+
 export interface TraceProcessorStats {
 	android_br_parse_errors: number;
 	android_log_format_invalid: number;
@@ -157,6 +158,7 @@ export interface TraceProcessorStats {
 	winscope_sf_transactions_parse_errors: number;
 	winscope_shell_transitions_parse_errors: number;
 }
+
 export interface TraceEvent {
 	args: Args;
 	cat: Cat;
@@ -174,6 +176,7 @@ export interface TraceEvent {
 	id2?: Id2;
 	scope?: Cat;
 }
+
 export interface Args {
 	name?: string;
 	uptime?: string;
@@ -218,6 +221,7 @@ export interface Args {
 	aborted_main?: number;
 	no_damage_main?: number;
 }
+
 export interface BeginData {
 	frame: FrameEnum;
 	startLine?: number;
@@ -227,6 +231,7 @@ export interface BeginData {
 	partialLayout?: boolean;
 	totalObjects?: number;
 }
+
 export enum FrameEnum {
 	A0F3F70F3978Fd62209013A2720F9C6D = 'A0F3F70F3978FD62209013A2720F9C6D',
 	B5F0974694Cbc89A228E79F129Ce5C16 = 'B5F0974694CBC89A228E79F129CE5C16',
@@ -242,6 +247,7 @@ export enum FrameEnum {
 	The8D652Ed34Eba26Dd929Eb052B4705349 = '8D652ED34EBA26DD929EB052B4705349',
 	The9B91F92498E46482A8E3B8Ef3363E1B2 = '9B91F92498E46482A8E3B8EF3363E1B2',
 }
+
 export interface StackTrace {
 	columnNumber: number;
 	functionName: string;
@@ -249,6 +255,7 @@ export interface StackTrace {
 	scriptId: string;
 	url: string;
 }
+
 export interface ChromeFrameReporter {
 	affects_smoothness: boolean;
 	frame_sequence: number;
@@ -264,22 +271,27 @@ export interface ChromeFrameReporter {
 	high_latency_contribution_stage?: string[];
 	frame_type?: FrameType;
 }
+
 export enum FrameType {
 	Backfill = 'BACKFILL',
 	Forked = 'FORKED',
 }
+
 export enum ScrollState {
 	ScrollNone = 'SCROLL_NONE',
 }
+
 export enum ChromeFrameReporterState {
 	StateDropped = 'STATE_DROPPED',
 	StateNoUpdateDesired = 'STATE_NO_UPDATE_DESIRED',
 	StatePresentedAll = 'STATE_PRESENTED_ALL',
 	StatePresentedPartial = 'STATE_PRESENTED_PARTIAL',
 }
+
 export interface ChromeMessagePump {
 	io_handler_location_iid: number;
 }
+
 export interface ChromeMojoEventInfo {
 	data_num_bytes?: number;
 	ipc_hash?: number;
@@ -288,33 +300,41 @@ export interface ChromeMojoEventInfo {
 	payload_size?: number;
 	watcher_notify_interface_tag?: string;
 }
+
 export interface MojoInterfaceMethod {
 	native_symbol: NativeSymbol;
 }
+
 export interface NativeSymbol {
 	mapping_id: number;
 	rel_pc: number;
 }
+
 export interface ChromeRasterTask {
 	source_frame_number: number;
 }
+
 export interface ChromeRendererSchedulerState {
 	is_backgrounded?: boolean;
 	is_hidden?: boolean;
 	rail_mode?: string;
 }
+
 export interface ChromeTaskAnnotator {
 	delay_policy: DelayPolicy;
 	task_delay_us: number;
 }
+
 export enum DelayPolicy {
 	FlexibleNoSooner = 'FLEXIBLE_NO_SOONER',
 	Precise = 'PRECISE',
 }
+
 export interface ChromeWindowHandleEventInfo {
 	hwnd_ptr: number;
 	message_id: number;
 }
+
 export interface Data {
 	frameId?: number;
 	renderer_pid?: number;
@@ -392,15 +412,18 @@ export interface Data {
 	compositeFailed?: number;
 	unsupportedProperties?: string[];
 }
+
 export interface CPUProfile {
 	nodes?: Node[];
 	samples: number[];
 }
+
 export interface Node {
 	callFrame: CallFrame;
 	id: number;
 	parent?: number;
 }
+
 export interface CallFrame {
 	codeType: CodeType;
 	functionName: string;
@@ -409,16 +432,19 @@ export interface CallFrame {
 	lineNumber?: number;
 	url?: string;
 }
+
 export enum CodeType {
 	JS = 'JS',
 	Other = 'other',
 }
+
 export interface FrameElement {
 	frame: FrameEnum;
 	name: string;
 	processId: number;
 	url: string;
 }
+
 export enum Bp {
 	C = 'C',
 	CheckReady = 'checkReady',
@@ -442,26 +468,32 @@ export enum Bp {
 	WVtpGtmOnSuccess = 'w.vtp_gtmOnSuccess',
 	X = 'X',
 }
+
 export enum NotStreamedReason {
 	InlineScript = 'inline script',
 }
+
 export enum Priority {
 	High = 'High',
 	Low = 'Low',
 	VeryHigh = 'VeryHigh',
 }
+
 export enum RenderBlocking {
 	Blocking = 'blocking',
 	NonBlocking = 'non_blocking',
 	PotentiallyBlocking = 'potentially_blocking',
 }
+
 export enum RequestMethod {
 	Get = 'GET',
 	Post = 'POST',
 }
+
 export enum DataState {
 	Running = 'running',
 }
+
 export enum DataType {
 	Beforeunload = 'beforeunload',
 	DOMContentLoaded = 'DOMContentLoaded',
@@ -477,6 +509,7 @@ export enum DataType {
 	Visibilitychange = 'visibilitychange',
 	Webkitvisibilitychange = 'webkitvisibilitychange',
 }
+
 export interface EndData {
 	endLine?: number;
 	layoutRoots?: LayoutRoot[];
@@ -487,38 +520,47 @@ export interface EndData {
 	y?: number;
 	state?: EndDataState;
 }
+
 export interface LayoutRoot {
 	depth: number;
 	nodeId: number;
 	quads: number[][];
 }
+
 export enum EndDataState {
 	Finished = 'finished',
 }
+
 export enum ImageType {
 	Avif = 'avif',
 	Webp = 'webp',
 }
+
 export interface Message {
 	content: string;
 	url: string;
 }
+
 export interface TileData {
 	layerId: number;
 	sourceFrameNumber: number;
 	tileId: TileID;
 	tileResolution: TileResolution;
 }
+
 export interface TileID {
 	id_ref: string;
 }
+
 export enum TileResolution {
 	HighResolution = 'HIGH_RESOLUTION',
 }
+
 export enum ArgsType {
 	AllocationFailure = 'allocation failure',
 	Task = 'task',
 }
+
 export enum Cat {
 	BaseToplevel = 'base,toplevel',
 	BlinkAnimationsDevtoolsTimelineBenchmarkRail = 'blink.animations,devtools.timeline,benchmark,rail',
@@ -544,9 +586,11 @@ export enum Cat {
 	V8DevtoolsTimelineDisabledByDefaultV8Compile = 'v8,devtools.timeline,disabled-by-default-v8.compile',
 	V8Execute = 'v8.execute',
 }
+
 export interface Id2 {
 	local: string;
 }
+
 export enum Name {
 	ANGLEPlatformImplRunWorkerTask = 'ANGLEPlatformImpl::RunWorkerTask',
 	ActivateLayerTree = 'ActivateLayerTree',
@@ -710,6 +754,7 @@ export enum Name {
 	XHRLoad = 'XHRLoad',
 	XHRReadyStateChange = 'XHRReadyStateChange',
 }
+
 export enum Ph {
 	B = 'B',
 	D = 'D',
@@ -726,6 +771,7 @@ export enum Ph {
 	S = 's',
 	X = 'X',
 }
+
 export enum S {
 	P = 'p',
 	T = 't',

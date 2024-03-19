@@ -34,6 +34,7 @@ describe('PDF', () => {
 			'h1 { font-size: 10px; margin-inline-start: 30px; }',
 			'</style>',
 		];
+
 		const CSS = PDF_CSS.join('');
 
 		await page.pdf({
@@ -58,6 +59,7 @@ describe('PDF', () => {
 			'h1 { font-size: 10px; margin-inline-start: 30px; }',
 			'</style>',
 		];
+
 		const CSS = PDF_CSS.join('');
 
 		await page.pdf({

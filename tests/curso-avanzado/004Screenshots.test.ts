@@ -58,6 +58,7 @@ describe('Screenshots', () => {
 	test('Should screenshot to an element', async () => {
 		const SELECTOR_GOOGLE_LOGO =
 			'body > div.L3eUgb > div.o3j99.LLD4me.yr19Zb.LS8OJ > div > img';
+
 		const ELEMENT = await page.waitForSelector(SELECTOR_GOOGLE_LOGO);
 
 		await ELEMENT?.screenshot({

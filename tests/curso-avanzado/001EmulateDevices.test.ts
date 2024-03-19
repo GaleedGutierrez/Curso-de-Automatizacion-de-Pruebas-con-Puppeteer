@@ -10,6 +10,7 @@ const TIME_WAIT = 5000;
 const IPHONE_6 = KnownDevices['iPhone 6'];
 const TABLET = KnownDevices['iPad Pro'];
 const TABLET_LANDSCAPE = KnownDevices['iPad Pro landscape'];
+
 // Old way
 const MY_DEVICE: Device = {
 	userAgent:

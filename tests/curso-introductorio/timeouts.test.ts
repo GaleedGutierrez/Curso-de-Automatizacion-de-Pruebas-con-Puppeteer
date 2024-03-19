@@ -11,6 +11,7 @@ describe('Timeouts', () => {
 			headless: false,
 			defaultViewport: null,
 		});
+
 		const PAGE = await BROWSER.newPage();
 
 		PAGE.setDefaultTimeout(20000);

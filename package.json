@@ -10,7 +10,7 @@
 		"test:device": "jest --forceExit --detectOpenHandles tests/curso-avanzado/001EmulateDevices.test.ts",
 		"test:update-snapshots": "jest --updateSnapshot --forceExit --detectOpenHandles  tests/curso-avanzado/005visual.test.ts",
 		"test:node": "node --trace-warnings node_modules/.bin/jest",
-		"test:15": "jest --runInBand --forceExit --detectOpenHandles tests/curso-avanzado/015PageObjectModel.test.ts",
+		"test:16": "jest --runInBand --forceExit --detectOpenHandles tests/curso-avanzado/016BookFlights.test.ts",
 		"prepare": "husky"
 	},
 	"repository": {

@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { BasePage } from './BasePage.ts';
 
 export class LoginPage extends BasePage {
@@ -21,6 +20,13 @@ export class LoginPage extends BasePage {
 
 	async visit(): Promise<void> {
 		const { url, navBar } = this;
+
+		// page.setDefaultTimeout(10000000);
+		await page.setViewport({
+			width: 1280,
+			height: 720,
+			deviceScaleFactor: 1,
+		});
 
 		await page.goto(url);
 		await page.waitForSelector(navBar);

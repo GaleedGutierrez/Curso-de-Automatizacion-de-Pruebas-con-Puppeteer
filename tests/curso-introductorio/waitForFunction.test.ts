@@ -10,6 +10,7 @@ describe('Type of waits', () => {
 				headless: false,
 				defaultViewport: null,
 			});
+
 			const PAGE = await BROWSER.newPage();
 
 			await PAGE.goto('https://demoqa.com/modal-dialogs');

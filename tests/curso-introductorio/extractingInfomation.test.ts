@@ -11,6 +11,7 @@ describe('Extracting information', () => {
 				headless: false,
 				defaultViewport: null,
 			});
+
 			const PAGE = await BROWSER.newPage();
 
 			await PAGE.goto('https://platzi.com');
@@ -32,6 +33,7 @@ describe('Extracting information', () => {
 				headless: false,
 				defaultViewport: null,
 			});
+
 			const PAGE = await BROWSER.newPage();
 
 			await PAGE.goto('https://platzi.com');
@@ -55,6 +57,7 @@ describe('Extracting information', () => {
 				headless: false,
 				defaultViewport: null,
 			});
+
 			const PAGE = await BROWSER.newPage();
 
 			await PAGE.goto('https://platzi.com');

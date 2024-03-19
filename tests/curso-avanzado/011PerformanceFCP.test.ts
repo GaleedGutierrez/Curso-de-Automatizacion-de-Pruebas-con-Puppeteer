@@ -39,6 +39,7 @@ describe('Performance', () => {
 				),
 			),
 		) as PerformanceEntryList;
+
 		const FIRST_CONTENTFUL_PAINT = JSON.parse(
 			await page.evaluate(() =>
 				JSON.stringify(
