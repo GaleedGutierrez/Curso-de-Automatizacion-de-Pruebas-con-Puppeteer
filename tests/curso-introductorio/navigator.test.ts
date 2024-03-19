@@ -6,6 +6,7 @@ describe('First test', () => {
 			headless: true,
 			defaultViewport: null,
 		});
+
 		const PAGE = await BROWSER.newPage();
 
 		await PAGE.goto('https://github.com/');

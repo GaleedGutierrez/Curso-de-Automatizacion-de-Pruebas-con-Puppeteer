@@ -10,6 +10,7 @@ describe('Interacting with elements', () => {
 				headless: false,
 				defaultViewport: null,
 			});
+
 			const PAGE = await BROWSER.newPage();
 
 			await PAGE.goto(
@@ -35,6 +36,7 @@ describe('Interacting with elements', () => {
 				headless: false,
 				defaultViewport: null,
 			});
+
 			const PAGE = await BROWSER.newPage();
 
 			await PAGE.goto(
@@ -63,6 +65,7 @@ describe('Interacting with elements', () => {
 				headless: false,
 				defaultViewport: null,
 			});
+
 			const PAGE = await BROWSER.newPage();
 
 			await PAGE.goto('https://devexpress.github.io/testcafe/example/');
