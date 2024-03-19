@@ -19,6 +19,22 @@ const config: Config = {
 	},
 	bail: 5,
 	moduleNameMapper: { '^@/(.*)$': '<rootDir>/$1' },
+	reporters: [
+		'default',
+		[
+			'./node_modules/jest-html-reporter',
+			{
+				pageTitle: 'Test Report',
+			},
+		],
+	],
+	// reporters: ['default', ['jest-junit', { suiteName: 'jest tests' }]],
+	// reporters: [
+	// 	[
+	// 		'jest-silent-reporter',
+	// 		{ useDots: true, showPaths: true, showWarnings: true },
+	// 	],
+	// ],
 	// clearMocks: true,
 	// collectCoverage: true,
 	// coverageDirectory: 'coverage',
